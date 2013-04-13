@@ -1,0 +1,7 @@
+table#data {
+	border-collapse: collapse;
+}
+
+table#data, table#data th, table#data td {
+	border: 2px solid #999;
+}
