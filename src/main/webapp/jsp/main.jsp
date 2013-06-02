@@ -5,30 +5,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/jsp/css/main.css">
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/jsp/css/table.css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/jsp/css/style.css">
+
 <title>${form.title}</title>
 </head>
 <body>
 <div id="wrap">
-	<div id="header"><img src="${pageContext.request.contextPath}/jsp/img/logo.gif"></div>
-	<div id="top"></div>
-	<div id="center">
+	<div id="header"></div>
+	<div id="mainTop"></div>
+	<div id="mainCenter">
 		<div id="navigation">
-			<h3>Список сериалов:</h3>
-			<ul>
-				<li>
-					<form action="${pageContext.request.contextPath}/edit" method="POST">
-						<input type="hidden" name="type" value="${constants.serial}">
-						<input type="submit" name="${constants.new_entry}" value="Добавить сериал">
-					</form>
-				</li><br />
+			<form action="${pageContext.request.contextPath}/edit" method="POST">
+				<span class="addSerialButton button">
+					<input type="submit" name="${constants.new_entry}" value="Добавить сериал" class="addSerial button-in">
+				</span>
+				<input type="hidden" name="type" value="${constants.serial}">
+			</form>
+			<h3 class="serialListTitle">Список сериалов</h3>
+			<ul class="serialList">
 				<c:forEach var="serial" items="${form.serialList}">
-					<li><a href="${pageContext.request.contextPath}/main?serialId=${serial.serialId}">${serial.serialTitle}</a></li>
+					<li><a href="${pageContext.request.contextPath}/main?serialId=${serial.serialId}" class="link">${serial.serialTitle}</a></li>
 				</c:forEach>
 			</ul>
 		</div>
-		<div id="body">
+		<div id="content">
 			<c:choose>
 				<c:when test="${form.requestType == constants.serial}">
 					<c:import url="/jsp/serial.jsp">
@@ -49,16 +49,15 @@
 					</c:import>
 				</c:when>
 				<c:otherwise>
-				Выберите сериал
+				<p class="plainText">Выберите сериал</p>
 				</c:otherwise>
 			</c:choose>
 		</div>
-		<div id="clearer"></div>
 	</div>
 	
-	<div id="bottom"></div>
+	<div id="mainBottom"></div>
 	<div id="footer">
-		<h3>Powered by Tass @ 2013</h3>
+		<h3 class="footerText">Powered by Tass @ 2013</h3>
 	</div>
 </div>
 </body>

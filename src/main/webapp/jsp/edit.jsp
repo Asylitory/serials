@@ -5,50 +5,46 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/jsp/css/edit.css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/jsp/css/style.css">
 <title>${form.title}</title>
 </head>
 <body>
 <div id="wrap">
-	<div id="header"><img src="${pageContext.request.contextPath}/jsp/img/logo.gif"></div>
-	<div id="top"></div>
+	<div id="header"></div>
+	<div id="formTop"></div>
 	
-	<div id="center">
+	<div id="formCenter">
 		<c:choose>
 			<c:when test="${form.action == constants.delete}">
 				<form action="${pageContext.request.contextPath}/complete" method="POST">
 					<c:choose>
 						<c:when test="${form.requestType == constants.serial}">
-							Удалить сериал ${form.serial.serialTitle}?
+							<p class="plainText">Удалить сериал ${form.serial.serialTitle}?</p>
 							<input type="hidden" name="id" value="${form.serial.serialId}">
 							<input type="hidden" name="type" value="${constants.serial}">
 						</c:when>
 						<c:when test="${form.requestType == constants.season}">
-							Удалить сезон ${form.season.seasonTitle} из сериала ${form.serial.serialTitle}?
+							<p class="plainText">Удалить сезон ${form.season.seasonTitle} из сериала ${form.serial.serialTitle}?</p>
 							<input type="hidden" name="id" value="${form.season.seasonId}">
 							<input type="hidden" name="type" value="${constants.season}">
 						</c:when>
 						<c:otherwise>
-							Удалить серию ${form.series.seriesTitle} из сериала ${form.serial.serialTitle}, сезон ${form.season.seasonTitle}?
+							<p class="plainText">Удалить серию ${form.series.seriesTitle} из сериала ${form.serial.serialTitle}, сезон ${form.season.seasonTitle}?</p>
 							<input type="hidden" name="id" value="${form.series.seriesId}">
 							<input type="hidden" name="type" value="${constants.series}">
 						</c:otherwise>
 					</c:choose>
-					<table>
+					<table class="controls">
 						<tr>
 							<td>
-								Удалить
+								<span class="button">
+									<input type="submit" name="${constants.delete}" value="Удалить" class="button-in">
+								</span>
 							</td>
 							<td>
-								<input type="submit" name="${constants.delete}" value=">>">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								Отмена
-							</td>
-							<td>
-								<input type="submit" name="${constants.cancel}" value=">>">
+								<span class="button">
+									<input type="submit" name="${constants.cancel}" value="Отмена" class="button-in">
+								</span>
 							</td>
 						</tr>
 					</table>
@@ -56,7 +52,7 @@
 			</c:when>
 			<c:otherwise>
 				<form action="${pageContext.request.contextPath}/complete" method="POST">
-					<table>
+					<table class="controls tableMinWidthTd">
 						<tr>
 							<td>
 								Название
@@ -64,14 +60,18 @@
 							<td>
 					<c:choose>
 						<c:when test="${form.requestType == constants.serial}">
-								<input type="text" name="serialTitle" value="${form.serial.serialTitle}">
+								<span class="editText">
+									<input type="text" name="serialTitle" value="${form.serial.serialTitle}" class="editText-in">
+								</span>
 							</td>
 						</tr>
 							<input type="hidden" name="id" value="${form.serial.serialId}">
 							<input type="hidden" name="type" value="${constants.serial}">
 						</c:when>
 						<c:when test="${form.requestType == constants.season}">
-								<input type="text" name="seasonTitle" value="${form.season.seasonTitle}">
+								<span class="editText">
+									<input type="text" name="seasonTitle" value="${form.season.seasonTitle}" class="editText-in">
+								</span>
 							</td>
 						</tr>
 							<input type="hidden" name="id" value="${form.season.seasonId}">
@@ -79,7 +79,9 @@
 							<input type="hidden" name="type" value="${constants.season}">							
 						</c:when>
 						<c:otherwise>
-								<input type="text" name="seriesTitle" value="${form.series.seriesTitle}">
+								<span class="editText">
+									<input type="text" name="seriesTitle" value="${form.series.seriesTitle}" class="editText-in">
+								</span>
 							</td>
 						</tr>
 						<tr>
@@ -87,7 +89,9 @@
 								Дата выхода
 							</td>
 							<td>
-								<input type="text" name="date" value="${form.series.date}">
+								<span class="editText">
+									<input type="text" name="date" value="${form.series.date}" class="editText-in">
+								</span>
 							</td>
 						</tr>
 							<input type="hidden" name="id" value="${form.series.seriesId}">
@@ -96,41 +100,33 @@
 						</c:otherwise>
 					</c:choose>
 					</table>
-					<table>
+					<table class="controls">
 					<c:choose>
 						<c:when test="${form.action == constants.edit}">
 						<tr>
 							<td>
-								Изменить
+								<span class="button">
+									<input type="submit" name="${constants.edit}" value="Изменить" class="button-in">
+								</span>
 							</td>
 							<td>
-								<input type="submit" name="${constants.edit}" value=">>">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								Отмена
-							</td>
-							<td>
-								<input type="submit" name="${constants.cancel}" value=">>">
+								<span class="button">
+									<input type="submit" name="${constants.cancel}" value="Отмена" class="button-in">
+								</span>
 							</td>
 						</tr>
 						</c:when>
 						<c:otherwise>
 						<tr>
 							<td>
-								Создать
-							</td>
-							<td>
-								<input type="submit" name="${constants.new_entry}" value=">>">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								Отмена
+								<span class="button">
+									<input type="submit" name="${constants.new_entry}" value="Создать" class="button-in">
+								</span>
 							</td>
 							<td>		
-								<input type="submit" name="${constants.new_cancel}" value=">>">
+								<span class="button">
+									<input type="submit" name="${constants.new_cancel}" value="Отмена" class="button-in">
+								</span>
 							</td>
 						</tr>				
 						</c:otherwise>
@@ -141,9 +137,9 @@
 		</c:choose>
 	</div>
 	
-	<div id="bottom"></div>
+	<div id="formBottom"></div>
 	<div id="footer">
-			<h3>Powered by Tass @ 2013</h3>
+			<h3 class="footerText">Powered by Tass @ 2013</h3>
 	</div>
 </div>
 </body>

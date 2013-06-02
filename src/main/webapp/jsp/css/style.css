@@ -1,0 +1,145 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	outline: 0;
+	border: 0;
+	color: #999;
+	font-family: Georgia;
+}
+
+html, body {
+	background: #000;
+}
+
+#wrap {
+	margin: 0 auto;
+	width: 900px;
+}
+/*                  HEADER                       */
+#header {
+	height: 150px;
+	background: url("../img/Header.png") no-repeat;
+}
+
+/*                   FORM                        */
+#formTop {
+	height: 10px;
+	background: url("../img/formTop.png") no-repeat;
+}
+#formCenter {
+	min-height: 100px;
+	background: url("../img/formCenter.png") repeat-y;
+}
+#formBottom {
+	height: 10px;
+	background: url("../img/formBottom.png") no-repeat;
+}
+/*                  CENTER                       */
+#mainTop {
+	height: 10px;
+	background: url("../img/mainTop.png") no-repeat;
+}
+
+#mainCenter {
+	min-height: 100px;
+	background: url("../img/mainCenter.png") repeat-y;
+	overflow: hidden;
+}
+
+#navigation {
+	width: 200px;
+	float: left;
+}
+
+#content {
+	width: 700px;
+	margin-left: 200px;
+}
+
+#mainBottom {
+	height: 10px;
+	background: url("../img/mainBottom.png") no-repeat;
+}
+/*             CENTER NAVIGATION                 */
+.addSerialButton {
+	margin: 10px 0px 0px 25px;
+}
+
+.serialListTitle {
+	font-size: 18px;
+	margin: 60px 0px 0px 15px;
+}
+.serialList {
+	list-style: none;
+	text-align: center;
+	margin-bottom: 10px;
+}
+/*                CENTER CONTENT                 */
+.controls {
+	margin: 0 auto;
+	padding: 8px 0;
+	text-align: center;
+}
+.dataTable {
+	margin: 0 auto 8px;
+	text-align: center;
+	border-collapse: collapse;
+}
+.dataTable, .dataTable th, .dataTable td {
+	border: 2px solid #999;
+}
+.tableMinWidthTd td {
+	min-width: 250px;
+}
+.plainText {
+	text-align: center;
+	margin-top: 5px;
+}
+/*                   FOOTER                      */
+#footer {
+	height: 80px;
+	background: url("../img/Footer.png") no-repeat;
+}
+
+.footerText {
+	float: right;
+	margin: 25px 20px 0px 0px;
+}
+
+/*                  BUTTONS                       */
+.button {
+	background: url("../img/button.png") no-repeat right -39px;
+	padding-right: 7px;
+	float: left;
+	height: 39px;
+}
+.button-in {
+	background: url("../img/button.png") no-repeat top left;
+	height: 39px;
+	padding: 0px 0px 5px 5px;
+	color: #000;
+	font-size: 18px;
+	text-align: center;
+	min-width: 100px;
+}
+/*                    TEXT EDIT                     */
+.editText {
+	background: url("../img/TextEdit.png") no-repeat right -18px;;
+	height: 18px;
+	padding-right: 6px;
+	float: left;
+}
+.editText-in {
+	background: url("../img/TextEdit.png") no-repeat top left;
+	height: 18px;
+	padding: 0 0 5px 7px;
+	color: #000;
+	text-align: center;
+}
+/*                    LINKS                         */
+.link {
+	text-decoration: none;
+}
+.link:HOVER {
+	text-decoration: underline;
+}
